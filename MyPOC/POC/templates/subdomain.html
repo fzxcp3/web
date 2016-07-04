@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block context %}
+
+<div class="container-fluid">
+    <div class="row">
+    <form action="/subdomain" method="POST" role="search">
+        <div class="form-group">
+            {% csrf_token %}
+            <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-1" style="padding-left: 120px">
+                    {{ MyForm.domain }}
+                </div>
+                <div class="col-md-2" style="margin-left: -30px;">
+                    <input type="submit" value="提交" class="btn btn-default" id="bt1">
+                </div>
+            </div>
+            </div>
+        </div>
+        </form>
+    </form>
+</div>
+</div>
+
+<div class="row">
+    <p>{{ input }}</p>
+</div>
+{% endblock %}
