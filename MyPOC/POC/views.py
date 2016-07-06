@@ -6,7 +6,8 @@ from django import forms
 from django.template import RequestContext
 from .models import LoginUser
 from controller.social import *
-from controller.subDomain.subDomainsBrute import DNSBrute
+import os
+from controller.sub import sub
 # Create your views here.
 
 
@@ -49,17 +50,18 @@ def index(request):
 class formSubdomain(forms.Form):
     domain = forms.CharField(widget=forms.TextInput(attrs={"class":"form-control"}))
 
-def  subdomain(request):
+def subdomain(request):
     domain = ""
+    message = ""
+    result = {}
     if request.method == "POST":
         form = formSubdomain(request.POST)
         if form.is_valid():
             domain = form.cleaned_data["domain"]
-
+            result,message = sub(domain)
     else:
         form = formSubdomain()
-
-    return render(request,"subdomain.html",context={"request":request,"MyForm":form,"input":domain})
+    return render(request,"subdomain.html",context={"request":request,"MyForm":form,"input":domain,"res":result,"Msg":message})
 
 
 def weakhunt(request):

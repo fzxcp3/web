@@ -3,6 +3,7 @@
 
 <div class="container-fluid">
     <div class="row">
+        <p class="h1 text-center" style="padding-bottom: 15px">C段/子站信息查询</p>
     <form action="/subdomain" method="POST" role="search">
         <div class="form-group">
             {% csrf_token %}
@@ -19,10 +20,22 @@
         </div>
         </form>
     </form>
+        <p class="h2 small text-center">{{ Msg }}</p>
+    <table class="table table-bordered table-hover table-striped">
+        {% for key,values in res.items %}
+            <tr>
+                <td>{{ key }}</td>
+                <td>
+                {% for i in values %}
+                <a href="{{ i }}">{{ i }}</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                {% endfor %}
+                </td>
+
+            </tr>
+        {% endfor %}
+    </table>
 </div>
 </div>
 
-<div class="row">
-    <p>{{ input }}</p>
-</div>
 {% endblock %}

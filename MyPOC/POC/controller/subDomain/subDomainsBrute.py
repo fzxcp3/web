@@ -11,7 +11,9 @@ import time
 import optparse
 import os
 from lib.consle_width import getTerminalSize
+import redis
 
+queue_db = redis.Redis(host="127.0.0.1",port=6379,db=0)
 
 class DNSBrute:
     def __init__(self, target, names_file, ignore_intranet, threads_num, output):
@@ -113,10 +115,8 @@ class DNSBrute:
                         if (not self.ignore_intranet) or (not DNSBrute.is_intranet(answers[0].address)):
                             self.lock.acquire()
                             self.found_count += 1
-                            msg = cur_sub_domain.ljust(30) + ips
-                            sys.stdout.write('\r' + msg + ' ' * (self.console_width- len(msg)) + '\n\r')
-                            sys.stdout.flush()
                             self.outfile.write(cur_sub_domain.ljust(30) + '\t' + ips + '\n')
+                            queue_db.hset(self.target,cur_sub_domain,ips)
                             self.lock.release()
                             for i in self.next_subs:
                                 self.queue.put(i + '.' + sub)
@@ -169,3 +169,4 @@ if __name__ == '__main__':
                  threads_num=options.threads_num,
                  output=options.output)
     d.run()
+    queue_db.delete(args[0])
