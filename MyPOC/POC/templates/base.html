@@ -43,7 +43,7 @@
           <ul>
             <li><a href="/" {% if "/" == request.path %}class="active"{% endif %}><i class="fa fa-home fa-fw"></i>社工库</a></li>
             <li><a href="/weakhunt" {% if "weakhunt" in  request.path %}class="active"{% endif %}><i class="fa fa-bar-chart fa-fw"></i>weakhunt</a></li>
-            <li><a href="/subdomain" {% if "subdomain" in request.path %}class="active"{% endif %}><i class="fa fa-database fa-fw"></i>C段/子站信息</a></li>
+            <li><a href="/subdomain" {% if "domain" in request.path %}class="active"{% endif %}><i class="fa fa-database fa-fw"></i>C段/子站信息</a></li>
             <li><a href="poc_exp" {% if "poc" in request.path %}class="active"{% endif %}><i class="fa fa-map-marker fa-fw"></i>POC/EXP</a></li>
             {% if is_admin %}
             <li><a href="/admin" {% if "manage" in  request.path %}class="active"{% endif %}><i class="fa fa-users fa-fw"></i>用户管理</a></li>

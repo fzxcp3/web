@@ -34,13 +34,13 @@ def sub(domain):
     else:
         print os.getcwd()
         os.chdir("F:/django/MyPOC/POC/controller/subDomain")
-        dir = list(os.walk("./"))[0][2]
+        dir = list(os.walk("output/"))[0][2]
         if domain+".txt" not in dir:
             p = subprocess.Popen("python subDomainsBrute.py "+domain+" -t 500",shell=True)
             os.chdir("../../")
             return {},"已经添加到任务队列中，刷新有惊喜..."
         else:
-            with open(domain+".txt") as fd:
+            with open("output/"+domain+".txt") as fd:
                 os.chdir("../../")
                 content = fd.readlines()
                 for i in content:

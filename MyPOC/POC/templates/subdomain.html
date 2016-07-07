@@ -24,10 +24,10 @@
     <table class="table table-bordered table-hover table-striped">
         {% for key,values in res.items %}
             <tr>
-                <td>{{ key }}</td>
+                <td><a href="http://{{ key }}">{{ key }}</a></td>
                 <td>
                 {% for i in values.ip %}
-                <a href="{{ i }}">{{ i }}</a>
+                <a href="/domain/{{ i }}">{{ i }}</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 {% endfor %}
                 </td>

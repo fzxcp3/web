@@ -50,6 +50,9 @@ def index(request):
 class formSubdomain(forms.Form):
     domain = forms.CharField(widget=forms.TextInput(attrs={"class":"form-control"}))
 
+def domain(request,var):
+    return render(request,"domain.html",context={"ip":var})
+
 def subdomain(request):
     domain = ""
     message = ""
