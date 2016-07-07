@@ -1,0 +1,3 @@
+www.wooyun.org                	112.25.91.129
+news.wooyun.org               	112.25.91.129
+static.wooyun.org             	112.21.165.130, 221.181.196.150

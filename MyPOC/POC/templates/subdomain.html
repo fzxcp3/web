@@ -26,12 +26,13 @@
             <tr>
                 <td>{{ key }}</td>
                 <td>
-                {% for i in values %}
+                {% for i in values.ip %}
                 <a href="{{ i }}">{{ i }}</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 {% endfor %}
                 </td>
-
+                <td>{{ values.server }}</td>
+                <td>{{ values.title }}</td>
             </tr>
         {% endfor %}
     </table>

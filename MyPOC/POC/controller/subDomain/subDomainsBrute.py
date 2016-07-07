@@ -11,6 +11,9 @@ import time
 import optparse
 import os
 from lib.consle_width import getTerminalSize
+sys.path.append("..")
+from infor import information
+import threading
 import redis
 
 queue_db = redis.Redis(host="127.0.0.1",port=6379,db=0)
@@ -117,6 +120,9 @@ class DNSBrute:
                             self.found_count += 1
                             self.outfile.write(cur_sub_domain.ljust(30) + '\t' + ips + '\n')
                             queue_db.hset(self.target,cur_sub_domain,ips)
+                            t = threading.Thread(target=information,args=(cur_sub_domain,))
+                            t.setDaemon(True)
+                            t.start()
                             self.lock.release()
                             for i in self.next_subs:
                                 self.queue.put(i + '.' + sub)

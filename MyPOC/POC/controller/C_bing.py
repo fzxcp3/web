@@ -26,6 +26,7 @@ def bing_Query(ip):
     return result
 
 def Query(query):
+    d = ""
     if re.search("/(\d+)",query):
         query,d =  re.split("/",query)
     if not re.match("((\d+)\.(\d+)\.(\d+)\.\d+)",query):
@@ -40,6 +41,17 @@ def Query(query):
                 generate = ip_c
 
 Query("www.wecash.net")
+
+
+def conver(query):
+    if not re.match("((\d+)\.(\d+)\.(\d+)\.\d+)",query):
+        ip = dns.resolver.query(query,"A")
+        ips = ""
+        for i in ip:
+            ips += str(i)+" "
+        return ips
+    else:
+        return query
 
 #pprint(bing_Query("www.wecash.net"))
 
