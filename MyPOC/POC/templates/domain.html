@@ -2,4 +2,37 @@
 
 {% block context %}
     {{ ip }}
+    <div class="container-fluid">
+        <p>端口信息：</p>
+        <div class="row">
+            <p>{{ message }}</p>
+            <table class="table table-bordered table-hover table-striped">
+            {% for port,xxx in res.items %}
+                {% if forloop.first %}
+                <tr>
+                    <td>ip</td>
+                    <td>port</td>
+                    <td>service</td>
+                    <td>banner</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td>
+                        {{ ip }}
+                    </td>
+                    <td>
+                        {{ port }}
+                    </td>
+                    <td>
+                        {{ xxx.service }}
+                    </td>
+                    <td>
+                        {{ xxx.banner }}
+                    </td>
+                </tr>
+            {% endfor %}
+
+            </table>
+        </div>
+    </div>
 {% endblock %}

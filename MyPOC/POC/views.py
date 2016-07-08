@@ -7,6 +7,7 @@ from django.template import RequestContext
 from .models import LoginUser
 from controller.social import *
 import os
+from controller.portscan import port_infor
 from controller.sub import sub
 # Create your views here.
 
@@ -51,7 +52,11 @@ class formSubdomain(forms.Form):
     domain = forms.CharField(widget=forms.TextInput(attrs={"class":"form-control"}))
 
 def domain(request,var):
-    return render(request,"domain.html",context={"ip":var})
+    res,message = port_infor(var)
+    for i in res:
+        res[i] = eval(res[i])
+    print res
+    return render(request,"domain.html",context={"ip":var,"res":res,"message":message})
 
 def subdomain(request):
     domain = ""

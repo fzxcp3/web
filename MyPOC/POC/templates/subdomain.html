@@ -23,6 +23,14 @@
         <p class="h2 small text-center">{{ Msg }}</p>
     <table class="table table-bordered table-hover table-striped">
         {% for key,values in res.items %}
+        {% if forloop.first %}
+        <tr>
+            <td>netloc</td>
+            <td>ip</td>
+            <td>servers</td>
+            <td>titile</td>
+        </tr>
+        {% endif %}
             <tr>
                 <td><a href="http://{{ key }}">{{ key }}</a></td>
                 <td>
