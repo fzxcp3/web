@@ -7,8 +7,10 @@ from django.template import RequestContext
 from .models import LoginUser
 from controller.social import *
 import os
+import threading
 from controller.portscan import port_infor
 from controller.sub import sub
+from controller.allc import ScanC
 # Create your views here.
 
 
@@ -71,6 +73,9 @@ def subdomain(request):
         form = formSubdomain()
     return render(request,"subdomain.html",context={"request":request,"MyForm":form,"input":domain,"res":result,"Msg":message})
 
+def allC(request,ip):
+    result,message = ScanC(ip)
+    return render(request,"allC.html",context={"requests":request,"ip":ip,"result":result,"message":message})
 
 def weakhunt(request):
     return render_to_response("weakhunt.html",context={"request":request})

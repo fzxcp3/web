@@ -25,5 +25,6 @@ urlpatterns = [
     url('weakhunt',poc_views.weakhunt),
     url("subdomain",poc_views.subdomain),
     url(r"domain/(.*)",poc_views.domain),
+    url(r"allC/(.*)",poc_views.allC),
 
 ]

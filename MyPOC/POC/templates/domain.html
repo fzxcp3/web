@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 
 {% block context %}
-    {{ ip }}
+    {{ ip }} <a href="/allC/{{ ip }}" class="btn btn-info" style="font-size: 14px;padding: 4px 8px;">C段扫描</a>
     <div class="container-fluid">
-        <p>端口信息：</p>
         <div class="row">
-            <p>{{ message }}</p>
+            <br>
+            <p>扫描状态： {{ message }}</p>
             <table class="table table-bordered table-hover table-striped">
             {% for port,xxx in res.items %}
                 {% if forloop.first %}
+                <br>
+                <p>端口信息：</p>
                 <tr>
                     <td>ip</td>
                     <td>port</td>

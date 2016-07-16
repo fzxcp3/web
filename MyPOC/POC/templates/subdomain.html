@@ -35,8 +35,9 @@
                 <td><a href="http://{{ key }}">{{ key }}</a></td>
                 <td>
                 {% for i in values.ip %}
-                <a href="/domain/{{ i }}">{{ i }}</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="/domain/{{ i }}">{{ i }}</a>
+                    <a href="/allC/{{i}}" class="btn btn-default" style="font-size: 10px;padding:3px 4px;">C</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                 {% endfor %}
                 </td>
                 <td>{{ values.server }}</td>

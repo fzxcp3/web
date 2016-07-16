@@ -18,8 +18,11 @@ def nmap_scan(ip):
                 res[host][i]={}
                 res[host][i]['service'] = nm[host]['tcp'][i]['product']
                 res[host][i]['banner'] = ""
-                for key,banner in nm[host]['tcp'][i]['script'].items():
-                    res[host][i]['banner'] += banner+";"
+                try:
+                    for key,banner in nm[host]['tcp'][i]['script'].items():
+                        res[host][i]['banner'] += banner+";"
+                except:
+                    pass
                 fd.write(str(i)+"|-|"+res[host][i]['service']+"|-|"+res[host][i]['banner'])
         port_db.hmset(host,res[host])
     return
@@ -34,4 +37,3 @@ def port_infor(ip):
         t.setDaemon(True)
         t.start()
         return {},"端口扫描中..."
-
