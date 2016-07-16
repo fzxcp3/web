@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b62be2f0-372d-4886-ad0d-188ffc5d9a48" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MyPOC/POC/controller/allc.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyPOC/db.sqlite3" afterPath="$PROJECT_DIR$/MyPOC/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyPOC/MyPOC/urls.py" afterPath="$PROJECT_DIR$/MyPOC/MyPOC/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyPOC/POC/controller/portscan.py" afterPath="$PROJECT_DIR$/MyPOC/POC/controller/portscan.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyPOC/POC/templates/domain.html" afterPath="$PROJECT_DIR$/MyPOC/POC/templates/domain.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyPOC/POC/templates/subdomain.html" afterPath="$PROJECT_DIR$/MyPOC/POC/templates/subdomain.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MyPOC/POC/views.py" afterPath="$PROJECT_DIR$/MyPOC/POC/views.py" />
-    </list>
+    <list default="true" id="b62be2f0-372d-4886-ad0d-188ffc5d9a48" name="Default" comment="" />
     <ignored path="django.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -210,8 +201,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="973" />
-    <option name="y" value="67" />
+    <option name="x" value="239" />
+    <option name="y" value="34" />
     <option name="width" value="1302" />
     <option name="height" value="961" />
   </component>
@@ -766,7 +757,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="973" y="67" width="1302" height="961" extended-state="0" />
+    <frame x="239" y="34" width="1302" height="961" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20606531" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
